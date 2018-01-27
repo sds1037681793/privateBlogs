@@ -14,6 +14,24 @@ export default new Router({
       name: 'index',
       redirect: '/index',
       component: index,
+      menuShow: true,
+      children: [
+        {
+          path: '/index',
+          components: {
+            default: helloworld,
+            mynav: mynav,
+            sidebar: sidebar
+          },
+          name: '首页',
+          menuShow: true}
+      ]
+    },
+    {
+      path: '/',
+      name: 'index',
+      redirect: '/index',
+      component: index,
       children: [
         {
           path: '/index',
