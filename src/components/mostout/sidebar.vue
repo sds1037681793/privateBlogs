@@ -1,31 +1,22 @@
 <template>
   <div class="">
-    <ul class="">
-         <li v-for="(item,index) in sidebarName" v-bind:class="[{active : item.active}]">
+    <ul class="nav sidebar-menu">
+         <li v-for="item in sidebarName" :key="item.path" v-bind:class="[{active : item.active}]">
               {{item.name}}
-              <ul v-for="(children,indexs) in item.children">
+              <ul v-for="children in item.children" :key="item.path">
                   <li>
                       {{children.name}}
                   </li>
               </ul>
          </li>
-        <!--<li class="sidebar-1 active" ><a href="#" :to="{ path: '/index' }">外链学习目录</a></li>
-        <li class="sidebar-1"><a :to="{ path: '/my-information' }">个人主页</a></li>
-        <li class="sidebar-1"><a :to="{ path: '/job' }">工作历程</a></li>
-        <li class="sidebar-1"><a >学习随笔</a>
-          <ul>
-            <li class=""><a >ES6</a>
-                  <ul>
-                    <li><a >123</a></li>
-                  </ul>
-             </li>
-             <li><a >Vue</a></li>
-          </ul>
-        </li>-->
     </ul>
   </div>
 </template>
-<style></style>
+<style>
+  .sidebar-menu li.active{
+      color: #3bc0c3;
+  }
+</style>
 <script>
 export default {
   name: 'sidebar',
