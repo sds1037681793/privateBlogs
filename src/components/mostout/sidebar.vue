@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <ul class="nav sidebar-menu">
-         <li v-for="item in sidebarName" :key="item.path" v-bind:class="[{active : item.active}]">
+         <li v-for="item in sidebarName" v-bind:key="item.name" v-bind:class="[{active : item.active}]">
               {{item.name}}
               <ul v-for="children in item.children" :key="item.path">
                   <li>
@@ -15,6 +15,9 @@
 <style>
   .sidebar-menu li.active{
       color: #3bc0c3;
+  }
+  .sidebar-menu li{
+    cursor: pointer;
   }
 </style>
 <script>

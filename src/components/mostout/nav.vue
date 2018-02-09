@@ -24,6 +24,9 @@
 </style>
 <script>
 export default {
+  data() {
+    return {}
+  },
   name: 'mynav',
   methods: {
   }

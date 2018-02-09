@@ -2,13 +2,13 @@
   <div class="page" style="background-color: #edf1f2">
     <div class="navbar">
       <div class="navbar-inner">
-        <router-view name="mynav"></router-view>
+        <my-nav></my-nav>
       </div>
     </div>
     <div class="container">
       <div class="container-innerr">
         <div class="page-sidebar">
-          <router-view name="sidebar"></router-view>
+          <side-bar></side-bar>
         </div>
         <div class="page-content">
           <router-view></router-view>
@@ -55,10 +55,19 @@
   }
 </style>
 <script>
+  import MyNav from "@/components/mostout/nav"
+  import SideBar from "@/components/mostout/sidebar"
+  /*import HelloWorld from "@/components/HelloWorld"*/
+  export default{
+    data(){
+      return {}
+    },
+    name: 'index',
+    components:{
+      MyNav,SideBar
+    },
+    methods: {
 
-export default {
-  name: 'index',
-  methods: {
+    }
   }
-}
 </script>
